@@ -39,6 +39,12 @@
               <a class="nav-link" href="#projects">projects</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#my-shoes">my-shoes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">gallery</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#contact">contact</a>
             </li>
           </ul>
@@ -142,6 +148,31 @@
             </div>
           </div>
         </div>
+        <section id="my-shoes">
+          <div class="container">
+            <div class="row text-center mb-3">
+              <div class="col">
+                <h2>My shoes</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="shoes-box">
+                  <h4 class="shoes-name">shoes 1</h4>
+                  <img src="img/shoes1.png" alt="shoes" class="shoes-img" />
+                  <a href="#" class="btn btn-light shoes-detail-button"> show Details</a>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="shoes-box">
+                  <h4 class="shoes-name">shoes 2</h4>
+                  <img src="img/shoes2.png" alt="shoes" class="shoes-img" />
+                  <a href="#" class="btn btn-light shoes-detail-button"> show Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
@@ -276,9 +307,9 @@
       const galleryImage = document.querySelectorAll(".gallery-img");
 
       galleryImage.forEach((img, i) => {
-        img.dataset.aos = "fade-down";
-        img.dataset.aosDelay = i * 100;
-        img.dataset.aosDuration = 1000;
+        img.dataset.aos = "zoom-in";
+        img.dataset.aosDelay = i * 10;
+        img.dataset.aosDuration = 500;
       });
 
       AOS.init({
@@ -322,6 +353,14 @@
             console.log("Success!", response);
           })
           .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".shoes-box"), {
+        max: 25,
+        speed: 400,
       });
     </script>
   </body>

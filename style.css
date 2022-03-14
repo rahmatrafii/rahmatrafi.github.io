@@ -16,3 +16,82 @@ section {
 #gallery .row > * {
   padding: 0;
 }
+
+/* my shoes section */
+.shoes-box {
+  position: relative;
+  background-color: #0c6efd;
+  border-radius: 10px;
+  height: 450px;
+  transform-style: preserve-3d;
+}
+.shoes-box::before {
+  content: "MY";
+  position: absolute;
+  color: #fff;
+  font-size: 5em;
+  font-weight: bold;
+  font-style: italic;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: 0.6s;
+  opacity: 0;
+}
+.shoes-box:hover::before {
+  opacity: 0.3;
+}
+.shoes-box::after {
+  content: "SHOES";
+  position: absolute;
+  color: #fff;
+  font-size: 4em;
+  font-weight: bold;
+  font-style: italic;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: 0.6s;
+  opacity: 0;
+}
+.shoes-box:hover::after {
+  opacity: 0.3;
+}
+.shoes-name {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  opacity: 0;
+  transform: translate3d(0, 0, 50px);
+  transition: 0.5s;
+}
+.shoes-box:hover .shoes-name {
+  top: 10px;
+  opacity: 1;
+}
+.shoes-detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.shoes-box:hover .shoes-detail-button {
+  opacity: 1;
+  bottom: 20px;
+}
+.shoes-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 85px);
+  max-width: 320px;
+  transition: 0.5s;
+}
+.shoes-box:hover .shoes-img {
+  transform: translate3d(-50%, -50%, 85px) rotate(-10deg) scale(1.1);
+}
